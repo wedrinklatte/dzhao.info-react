@@ -6,6 +6,8 @@ import About from './components/about/About';
 import Works from './components/works/Works';
 import Footer from './components/Footer';
 import 'font-awesome/css/font-awesome.min.css';
+import './App.css';
+import Contact from './components/contact/Contact';
 
 class App extends Component {
   render() {
@@ -16,6 +18,7 @@ class App extends Component {
           <Home />
           <About />
           <Works />
+          <Contact />
           <Footer />
         </div>
     );

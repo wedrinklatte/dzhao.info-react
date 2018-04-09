@@ -9,9 +9,10 @@ class Header extends Component {
             <a className="navbar-brand" href=".">Ding Zhao</a>
           </div>
           <ul className="nav navbar-nav">
-            <li>
-              <a href="https://dingzhao.myportfolio.com">Gallery</a>
-            </li>
+            <li><a href="#about-section">About</a></li>
+            <li><a href="#works-section">Works</a></li>
+            <li><a href="https://dingzhao.myportfolio.com">Gallery</a></li>
+            <li><a href="#contact-section">Contact</a></li>
           </ul>
         </div>
       </nav>

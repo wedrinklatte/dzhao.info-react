@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import homeBackground from './home.JPG';
+import homeBackground from './images/home.JPG';
+import './css/Home.css';
 
 var homeSection = {
   backgroundImage: `url(${homeBackground})`
@@ -9,7 +10,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <section className="module-hero module-full-height module-fade" style={homeSection}>
+        <section className="started module-hero module-full-height module-fade" style={homeSection}>
           <div className="hs-caption container">
             <div className="caption-content align-left">
               <div className="hs-title-size-2 font-inc text-uppercase m-b-20">
@@ -25,7 +26,8 @@ class Home extends Component {
               </div>
             </div>
           </div>
-          <i className="icon fas fa-chevron-down"></i>
+          {/* <i className="icon fas fa-chevron-down"></i> */}
+          <a href="#" className="mouse-btn"><i className="icon ion ion-chevron-down"></i></a>
         </section>
       </div>
     );

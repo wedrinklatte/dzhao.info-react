@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import './css/WorkItem.css';
 
 class WorkItem extends Component {
   render() {
-    let someText = "hello world";
     return (
       <li className={"work-item " + this.props.category}>
         <a href={"#" + this.props.name} className="has-popup">
@@ -22,7 +22,7 @@ class WorkItem extends Component {
         <div id={this.props.name} className="popup-box mfp-fade mfp-hide">
           <div className="content">
             <div className="image">
-              <img src={this.props.avatar} alt="" />
+              <img src={this.props.fullimg} alt="" />
             </div>
             <div className="desc">
               {/* <h4>{this.props.subtitle}</h4> */}
