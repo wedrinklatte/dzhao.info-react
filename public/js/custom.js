@@ -1,12 +1,23 @@
 (function($){
 
+  var width = $(window).width();
+	var height = $(window).height();
+	$('section.started').css({'height':height});
+
 	/* ---------------------------------------------- /*
 	 * Preloader
 	/* ---------------------------------------------- */
 
-	$(window).load(function() {
-		$('.loader').fadeOut();
-		$('.page-loader').delay(350).fadeOut('slow');
+	// $(window).load(function() {
+	// 	$('.loader').fadeOut();
+	// 	$('.page-loader').delay(350).fadeOut('slow');
+  // });
+  
+	$(window).on('load', function() {
+		$(".preloader .spinner").fadeOut(function(){
+			$('.preloader').fadeOut();
+			$('body').addClass('ready');
+		});
 	});
 
 	$(document).ready(function() {
@@ -320,41 +331,41 @@
 		 * Google Map
 		/* ---------------------------------------------- */
 
-		// var mapLocation = new google.maps.LatLng(34.031428,-118.2071542,17);
+		var mapLocation = new google.maps.LatLng(34.031428,-118.2071542,17);
 
-		// var $mapis = $('#map');
+		var $mapis = $('#map');
 
-		// if ($mapis.length > 0) {
+		if ($mapis.length > 0) {
 
-		// 	map = new GMaps({
-		// 		streetViewControl : true,
-		// 		overviewMapControl: true,
-		// 		mapTypeControl: true,
-		// 		zoomControl : true,
-		// 		panControl : false,
-		// 		scrollwheel: false,
-		// 		center: mapLocation,
-		// 		el: '#map',
-		// 		zoom: 16,
-		// 		styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
-		// 	});
+			map = new GMaps({
+				streetViewControl : true,
+				overviewMapControl: true,
+				mapTypeControl: true,
+				zoomControl : true,
+				panControl : false,
+				scrollwheel: false,
+				center: mapLocation,
+				el: '#map',
+				zoom: 16,
+				styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
+			});
 
-		// 	var image = new google.maps.MarkerImage('assets/images/map-icon.png',
-		// 		new google.maps.Size(59, 65),
-		// 		new google.maps.Point(0, 0),
-		// 		new google.maps.Point(24, 42)
-		// 	);
+			var image = new google.maps.MarkerImage('assets/images/map-icon.png',
+				new google.maps.Size(59, 65),
+				new google.maps.Point(0, 0),
+				new google.maps.Point(24, 42)
+			);
 
-		// 	map.addMarker({
-		// 		position: mapLocation,
-		// 		icon: image,
-		// 		title: 'Rival',
-		// 		infoWindow: {
-		// 			content: '<p><strong>Semantic</strong><br/>121 Somewhere Ave, Suite 123<br/>P: (123) 456-7890<br/>Australia</p>'
-		// 		}
-		// 	});
+			map.addMarker({
+				position: mapLocation,
+				icon: image,
+				title: 'Rival',
+				infoWindow: {
+					content: '<p><strong>Semantic</strong><br/>121 Somewhere Ave, Suite 123<br/>P: (123) 456-7890<br/>Australia</p>'
+				}
+			});
 
-		// }
+		}
 
 		/* ---------------------------------------------- /*
 		 * Progress bars, counters animations
@@ -413,6 +424,26 @@
 		});
 
 		/* ---------------------------------------------- /*
+		 * Typed subtitle
+		/* ---------------------------------------------- */
+		$('.typed-title').typed({
+			stringsElement: $('.typing-title'),
+			backDelay: 5000, /* Delay in text change */
+			typeSpeed: 0, /* Typing speed */
+			loop: true
+		});
+
+    /* ---------------------------------------------- /*
+		 * Portfolio magnific popup
+		/* ---------------------------------------------- */
+		$('.has-popup').magnificPopup({
+			type: 'inline',
+			overflowY: 'auto',
+			closeBtnInside: true,
+			mainClass: 'mfp-fade'
+		});
+
+		/* ---------------------------------------------- /*
 		 * A jQuery plugin for fluid width video embeds
 		/* ---------------------------------------------- */
 
@@ -445,7 +476,54 @@
 		$('a[href="#totop"]').click(function() {
 			$('html, body').animate({ scrollTop: 0 }, 'slow');
 			return false;
-		});
+    });
+
+    /* Smoothscroll */
+    // if($('section.started').length) {
+    //   $(window).on('scroll', function(){
+    //     var scrollPos = $(window).scrollTop();
+    //     $('.nav ul li a').each(function () {
+    //       var currLink = $(this);
+    //       var refElement = $(currLink.attr("href"));
+    //       if (refElement.offset().top <= scrollPos) {
+    //         $('.nav ul li').removeClass("active");
+    //         currLink.closest('li').addClass("active");
+    //       }
+    //     });
+    //   });
+    // }
+
+    /* Top Menu */
+    if($('section.started').length) {
+      $('.nav li a').on('click', function(){
+        var id = $(this).attr('href');
+        var h = parseFloat($(id).offset().top);
+        
+        $('body,html').animate({
+          scrollTop: h + 10
+        }, 800);
+        
+        return false;
+      });
+    }
+
+    /* Hide mouse button on scroll */
+    $(window).on('scroll', function() {
+      if ($(this).scrollTop() >= height-10) {
+        $('.mouse-btn').fadeOut();
+      }
+      if ($(this).scrollTop() <= height-10) {
+        $('.mouse-btn').fadeIn();
+      }
+    });
+
+    /* On click mouse button, page scroll down */
+    $('section').on('click', '.mouse-btn', function() {
+      $('body,html').animate({
+        scrollTop: height
+      }, 800);
+    });
+  
 
 	});
 
