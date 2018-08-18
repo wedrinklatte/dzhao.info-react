@@ -33,7 +33,7 @@ class Works extends Component {
 						</div>
 					</div>
 					<ul id="works-grid" className="works-grid works-grid-4 works-grid-masonry works-hover-w">
-						<WorkItem name="spotlight" title="Spotlight" avatar={spotlight} fullimg={spotlight} category="data web" 
+						{/* <WorkItem name="spotlight" title="Spotlight" avatar={spotlight} fullimg={spotlight} category="data web" 
 							subtitle="A comprehensive analyzer to gauge market sentiment and to identify key ETF trends."
 							tools="Python" year="2017" 
 							desc="This is our project for the BLK HACK:2017 challenge, a comprehensive analyzer to gauge market sentiment and to identify key ETF trends.
@@ -43,7 +43,7 @@ class Works extends Component {
 							\nThe tool incorporates multi-dimensional data: Flow, Trade, Web Traffic and natural language processing stats from Dow Jones News and Twitter.
 							\nI primarily work on the NLP part. BlackRock's Text Analytics Platform (BTAP) hosts Dow Jones news corpus on its SolrCloud. I collect the newswire stats using Solr REST API and various request handlers provided by BTAP (which is actually my day job project). For the Twitter analytics, my team member streamed tweets using Twitter API, I fed the filtered tweets into Anaconda where I extracted term freq stats and sentiment stats using Natural Language Toolkit - NLTK.
 							\nI helped with the web GUI part as well, where we visualized the multi dimension results and make the tool interactive. We used AngularJS as the web framework and Highcharts as the primary UI components.
-							\nSpotlight won the Global Retail Tech business bounty champion." />
+							\nSpotlight won the Global Retail Tech business bounty champion." /> */}
 						{/* <WorkItem name="dashboard" title="Dashboard Lightweight Booting" avatar={dashboard} fullimg={dashboard} category="data network" 
 							subtitle="A comprehensive analyzer to gauge market sentiment and to identify key ETF trends."
 							tools="Java" year="2017" 
@@ -58,13 +58,10 @@ class Works extends Component {
 						<WorkItem name="btap" title="Text Analytics On Demand" avatar={btap} fullimg={btap} category="data web network" 
 							subtitle="On demand service to provide Natural Language Processing analytics."
 							tools="Java, TypeScript/Angular 2, Python" year="2016" 
-							desc="This is my primary work project when I was at Quantitative Tools Research team.
-							\nText Analytics On Demand Service is part of BlackRock Text Analytics Platform (BTAP) which facilitates Natural Language Processing for all the researchers and developers across BlackRock.
+							desc="Text Analytics On Demand Service facilitates Natural Language Processing for researchers and developers.
 							\nThis service provides basic building blocks using which you can turn text data into structured data and use it for a variety of different use cases. After you submit a piece of text to the service, the response from the service will contain:
 							\nTerm counts, Sentiment, Entities and Parts of speech tagging.
-							\nThe on-demand server is powered by Stanford CoreNLP library which is the state of art NLP package especially when it comes to Named Entity Recognition(More reads on my Twitter).
-							\nAt client side, I developed an Angular 2 based web app to grab user pasted text, to initiate communication to the server and to visualize the returned NLP stats in a more intuitive/interactive manner. I also shared Java and Python tempalte client side code internally.
-							\nClients talk to servers via BlackRock's proprietary messgaing system."/>
+							\nThe on-demand server is powered by Stanford CoreNLP library which is the state of art NLP package especially when it comes to Named Entity Recognition(More reads on my Twitter)."/>
 						<WorkItem name="bigml" title="Big Machine Learning" avatar={bigml} fullimg={bigml} category="data" 
 							subtitle="ADVANCED MACHINE LEARNING IMPLEMENTATIONS WITH LARGE DATASETS."
 							tools="JAVA, PYTHON" year="2015" repo="https://github.com/wedrinklatte/BigMachineLearning"
