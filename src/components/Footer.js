@@ -13,7 +13,7 @@ class Footer extends Component {
 			<div className="container">		
 				<div className="row">		
 					<div className="col-sm-12 text-center">
-						<p className="copyright font-inc m-b-0">© 2018 <a href=".">DING ZHAO</a>, All Rights Reserved.</p>
+						<p className="copyright font-inc m-b-0">© 2019 <a href=".">DING ZHAO</a>, All Rights Reserved.</p>
 					</div>		
 				</div>		
 			</div>		
